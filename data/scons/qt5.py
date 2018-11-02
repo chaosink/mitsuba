@@ -372,31 +372,31 @@ def enable_modules(self, modules, debug=False, crosscompiling=False) :
         import sys
 
         validModules = [
-                'QtCore',
-                'QtGui',
-                'QtWidgets',
-                'QtOpenGL',
-                'Qt3Support',
-                'QtAssistant', # deprecated
-                'QtAssistantClient',
-                'QtScript',
-                'QtDBus',
-                'QtSql',
-                'QtSvg',
+                'Qt5Core',
+                'Qt5Gui',
+                'Qt5Widgets',
+                'Qt5OpenGL',
+                'Qt53Support',
+                'Qt5Assistant', # deprecated
+                'Qt5AssistantClient',
+                'Qt5Script',
+                'Qt5DBus',
+                'Qt5Sql',
+                'Qt5Svg',
                 # The next modules have not been tested yet so, please
                 # maybe they require additional work on non Linux platforms
-                'QtNetwork',
-                'QtTest',
-                'QtXml',
-                'QtXmlPatterns',
-                'QtUiTools',
-                'QtDesigner',
-                'QtDesignerComponents',
-                'QtWebKit',
-                'QtHelp',
-                'QtScript',
-                'QtScriptTools',
-                'QtMultimedia',
+                'Qt5Network',
+                'Qt5Test',
+                'Qt5Xml',
+                'Qt5XmlPatterns',
+                'Qt5UiTools',
+                'Qt5Designer',
+                'Qt5DesignerComponents',
+                'Qt5WebKit',
+                'Qt5Help',
+                'Qt5Script',
+                'Qt5ScriptTools',
+                'Qt5Multimedia',
                 ]
         pclessModules = [
 # in qt <= 4.3 designer and designerComponents are pcless, on qt5.4 they are not, so removed.
@@ -415,16 +415,16 @@ def enable_modules(self, modules, debug=False, crosscompiling=False) :
                         str(invalidModules),str(validModules)))
 
         moduleDefines = {
-                'QtScript'   : ['QT_SCRIPT_LIB'],
-                'QtSvg'      : ['QT_SVG_LIB'],
-                'Qt3Support' : ['QT_QT3SUPPORT_LIB','QT3_SUPPORT'],
-                'QtSql'      : ['QT_SQL_LIB'],
-                'QtXml'      : ['QT_XML_LIB'],
-                'QtOpenGL'   : ['QT_OPENGL_LIB'],
-                'QtGui'      : ['QT_GUI_LIB'],
-                'QtWidgets'  : ['QT_WIDGETS_LIB'],
-                'QtNetwork'  : ['QT_NETWORK_LIB'],
-                'QtCore'     : ['QT_CORE_LIB'],
+                'Qt5Script'   : ['QT_SCRIPT_LIB'],
+                'Qt5Svg'      : ['QT_SVG_LIB'],
+                'Qt53Support' : ['QT_QT3SUPPORT_LIB','QT3_SUPPORT'],
+                'Qt5Sql'      : ['QT_SQL_LIB'],
+                'Qt5Xml'      : ['QT_XML_LIB'],
+                'Qt5OpenGL'   : ['QT_OPENGL_LIB'],
+                'Qt5Gui'      : ['QT_GUI_LIB'],
+                'Qt5Widgets'  : ['QT_WIDGETS_LIB'],
+                'Qt5Network'  : ['QT_NETWORK_LIB'],
+                'Qt5Core'     : ['QT_CORE_LIB'],
         }
         for module in modules :
                 try : self.AppendUnique(CPPDEFINES=moduleDefines[module])
